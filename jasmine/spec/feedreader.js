@@ -111,6 +111,29 @@ $(function() {
                * by the loadFeed function that the content actually changes.
                * Remember, loadFeed() is asynchronous.
                */
+      let feed1;
+      let feed2;
+
+          beforeEach(function(done) {
+            loadFeed(0, function () {
+              feed1 = $('.feed').html();
+
+              loadFeed(1, function () {
+                feed2= $('.feed').html();
+                done();
+              });
+            });
+          });
+
+        /* TODO: Write a test that ensures when a new feed is loaded
+        * by the loadFeed function that the content actually changes.
+        * Remember, loadFeed() is asynchronous.
+        */
+      it ('changes content', function (done) {
+        expect(feed1).not.toBe(feed2);
+        done();
+      });
+
 
     });
 
