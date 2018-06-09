@@ -52,7 +52,8 @@ $(function() {
 });
 
 /* TODO: Write a new test suite named "The menu" */
-describe ('The menu', function () {
+
+    describe ('The menu', function () {
 
 
         /* TODO: Write a test that ensures the menu element is
@@ -78,7 +79,11 @@ describe ('The menu', function () {
             expect($('body').hasClass('menu-hidden')).toBe(true);
           })
        });
+
     /* TODO: Write a new test suite named "Initial Entries" */
+    describe('Initial Entries', function () {
+
+
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -86,6 +91,17 @@ describe ('The menu', function () {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+         beforeEach(function(done) {
+           loadFeed(0, function () {
+             done();
+           });
+           });
+
+         it ('has an element within the .feed container', function (done) {
+            expect($('.feed .entry').length).toBeGreaterThan(0);
+            done();
+         });
+});
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
