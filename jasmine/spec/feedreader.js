@@ -63,8 +63,7 @@ $(function() {
          */
          it ('is hidden by default', function () {
            expect($('body').hasClass("menu-hidden")).toBe(true);
-         })
-
+         });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -72,12 +71,14 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
           it ('changes visibility when clicked on menu icon', function () {
-            let menuIcon = $('menu-icon-link');
+            let menuIcon = $('.menu-icon-link');
+
             menuIcon.click();
             expect($('body').hasClass('menu-hidden')).toBe(false);
+
             menuIcon.click();
             expect($('body').hasClass('menu-hidden')).toBe(true);
-          })
+          });
        });
 
     /* TODO: Write a new test suite named "Initial Entries" */
@@ -104,9 +105,13 @@ $(function() {
 });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
+    describe('New Feed Selection', function () {
 
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+              /* TODO: Write a test that ensures when a new feed is loaded
+               * by the loadFeed function that the content actually changes.
+               * Remember, loadFeed() is asynchronous.
+               */
+
+    });
+
 }());
